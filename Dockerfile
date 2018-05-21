@@ -5,8 +5,8 @@ MAINTAINER Benoit Vezina <benoit@xtremxpert.com>
 ENV DOKUWIKI_VERSION=2018-04-22a
 ARG DOKUWIKI_CSUM=18765a29508f96f9882349a304bffc03
 
+COPY php7.list /etc/apt/sources.list.d/
 
-RUN echo "deb http://repozytorium.mati75.eu/raspbian jessie-backports main contrib non-free" > /etc/apt/sources.list.d/php7.list
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key CCD91D6111A06851 && \
 	gpg --armor --export CCD91D6111A06851 | apt-key add -
 
