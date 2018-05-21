@@ -7,8 +7,8 @@ ARG DOKUWIKI_CSUM=18765a29508f96f9882349a304bffc03
 
 COPY php7.list /etc/apt/sources.list.d/
 
-RUN gpg --keyserver pgpkeys.mit.edu --recv-key CCD91D6111A06851 && \
-	gpg --armor --export CCD91D6111A06851 | apt-key add -
+RUN gpg --keyserver pgpkeys.mit.edu --recv-key CCD91D6111A06851
+RUN gpg --armor --export CCD91D6111A06851 | apt-key add -
 
 # Update & install packages & cleanup afterwards
 RUN DEBIAN_FRONTEND=noninteractive \
